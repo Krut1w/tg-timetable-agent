@@ -1,4 +1,4 @@
-from calc import test_get_num
+from libs import test_get_num
 
 def main():
     try:

@@ -1,11 +1,11 @@
 ## Первый запуск
 
-`git clone https://github.com/Krut1w/tg-timetable-agent.git`
-`python -m venv venv`
-`source venv/bin/activate`
-`pip install -r requirements.txt`
-`pip install -e .`
-`python src/main.py`
+1. `git clone https://github.com/Krut1w/tg-timetable-agent.git`
+2. `python -m venv venv`
+3. `source venv/bin/activate`
+4. `pip install -r requirements.txt`
+5. `pip install -e .`
+6. `python src/main.py`
 
 Что делает:
 1) Клонирует репозиторий
