@@ -1,1 +1,3 @@
 aiogram
+scikit-build-core
+setuptools
