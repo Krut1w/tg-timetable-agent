@@ -1,3 +1,4 @@
+
 ## Первый запуск
 
 1. `git clone https://github.com/Krut1w/tg-timetable-agent.git`
