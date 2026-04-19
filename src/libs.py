@@ -1,5 +1,4 @@
 import ctypes
-import sys
 from pathlib import Path
 
 LIBS_NAME = ["calculation"]
