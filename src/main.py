@@ -13,8 +13,7 @@ if load_dotenv(f"{script_dir}/../.env") == False:
 TG_TOKEN = os.getenv("TG_TOKEN")
 DB_CONFIG = f"dbname={os.getenv('DB_NAME')} user={os.getenv('DB_USER')} password={os.getenv('DB_PASSWORD')} host={os.getenv('DB_HOST')}"
 
-
-bot = Bot(token=TG_TOKEN, session=session) # session=session - часть проксирования
+bot = Bot(token=TG_TOKEN)
 dp = Dispatcher()
 
 # pool = AsyncConnectionPool(conninfo=DB_CONFIG, open=False)
