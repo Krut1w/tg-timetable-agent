@@ -1,4 +1,9 @@
-venv/
+.venv/
 build/
 src/__pycache__
 lib/
+
+*.exe
+*.ii
+*.s
+*.o

@@ -6,7 +6,7 @@ LIBS_NAME = ["calculation"]
 
 def _load_library(lib):
     if sys.platform == "win32":
-        lib_name = f"lib{lib}.dll"
+        lib_name = f"{lib}.dll"
     else:
         lib_name = f"lib{lib}.so"
 
