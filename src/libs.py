@@ -20,8 +20,8 @@ libs = {}
 for lib_name in LIBS_NAME:
     libs[lib_name] = _load_library(lib_name)
 
-calc_lib = libs[LIBS_NAME[0]] # calculation
-test_get_num = calc_lib.test_get_num
-test_get_num.argtypes = [ctypes.c_int]
-test_get_num.restype = ctypes.c_int
+# calc_lib = libs[LIBS_NAME[0]] # calculation
+# test_get_num = calc_lib.test_get_num
+# test_get_num.argtypes = [ctypes.c_int]
+# test_get_num.restype = ctypes.c_int
 
