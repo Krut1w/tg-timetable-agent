@@ -3,3 +3,5 @@ venv/
 build/
 src/__pycache__
 lib/
+
+.env
