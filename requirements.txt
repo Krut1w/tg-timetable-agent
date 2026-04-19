@@ -1,9 +1,3 @@
 aiogram
 scikit-build-core
-
-*.exe
-*.ii
-*.s
-*.o
-
-lib/
+psycopg2-binary
