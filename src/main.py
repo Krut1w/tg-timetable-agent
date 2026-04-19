@@ -1,4 +1,10 @@
+import os
+from dotenv import load_dotenv
 from libs import test_get_num
+
+load_dotenv("../.env")
+
+api_key = os.getenv("TG_API_KEY")
 
 def main():
     try:
