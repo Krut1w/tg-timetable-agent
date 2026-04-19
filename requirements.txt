@@ -2,5 +2,3 @@ aiogram
 scikit-build-core
 psycopg[binary,pool]
 python-dotenv
-
-aiohttp-socks # для прокси
