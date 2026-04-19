@@ -3,7 +3,6 @@ import asyncio
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command, CommandObject
 from psycopg_pool import AsyncConnectionPool
-from aiogram.client.session.aiohttp import AiohttpSession
 from dotenv import load_dotenv
 # from libs import test_get_num
 
@@ -14,15 +13,11 @@ if load_dotenv(f"{script_dir}/../.env") == False:
 TG_TOKEN = os.getenv("TG_TOKEN")
 DB_CONFIG = f"dbname={os.getenv('DB_NAME')} user={os.getenv('DB_USER')} password={os.getenv('DB_PASSWORD')} host={os.getenv('DB_HOST')}"
 
-# ПРОКСИ
-proxy_url = "http://127.0.0.1:20171"
-session = AiohttpSession(proxy=proxy_url)
-# ПРОКСИ
 
 bot = Bot(token=TG_TOKEN, session=session) # session=session - часть проксирования
 dp = Dispatcher()
 
-pool = AsyncConnectionPool(conninfo=DB_CONFIG, open=False)
+# pool = AsyncConnectionPool(conninfo=DB_CONFIG, open=False)
 
 @dp.message(Command("add"))
 async def add_record(message: types.Message, command: CommandObject):
@@ -47,12 +42,12 @@ async def add_record(message: types.Message, command: CommandObject):
 
 
 async def main():
-    await pool.open()
+    #await pool.open()
 
     try:
         await dp.start_polling(bot)
     finally:
-        await pool.close()
+        pass #await pool.close()
 
     # try:
     #     val = 10
