@@ -5,10 +5,7 @@ from pathlib import Path
 LIBS_NAME = ["calculation"]
 
 def _load_library(lib):
-    if sys.platform == "win32":
-        lib_name = f"{lib}.dll"
-    else:
-        lib_name = f"lib{lib}.so"
+    lib_name = f"lib{lib}.so"
 
     root_dir = Path(__file__).parent.parent
     lib_path = root_dir/"lib"/lib_name
