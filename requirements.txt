@@ -2,3 +2,4 @@ aiogram
 scikit-build-core
 psycopg[binary,pool]
 python-dotenv
+apscheduler

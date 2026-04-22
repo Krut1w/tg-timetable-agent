@@ -44,3 +44,41 @@
 ## Файл конфигурации
 
 `.env` - файл с ключами, паролями и т.д
+
+## Создание базы данных
+
+`CREATE DATABASE tg_timeable_db`
+
+`\c tg_timeable_db`
+
+```postgresql
+CREATE TABLE users (
+id BIGSERIAL PRIMARY KEY,
+telegram_id BIGINT NOT NULL UNIQUE,
+username VARCHAR(64),
+created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+```
+```postgresql
+CREATE TABLE tasks (
+id BIGSERIAL PRIMARY KEY,
+user_id BIGINT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+title VARCHAR(255) NOT NULL,
+deadline TIMESTAMPTZ,
+is_done BOOLEAN NOT NULL DEFAULT FALSE,
+created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+```
+
+```postgresql
+CREATE TABLE reminders (
+id BIGSERIAL PRIMARY KEY,
+task_id BIGINT NOT NULL REFERENCES tasks(id) ON DELETE CASCADE,
+fire_at TIMESTAMPTZ NOT NULL,
+sent BOOLEAN NOT NULL DEFAULT FALSE
+);
+```
+
+`CREATE INDEX ON reminders (fire_at) WHERE sent = false;`
+
+`CREATE INDEX ON tasks (user_id);`
